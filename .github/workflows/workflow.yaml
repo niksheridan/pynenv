@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  run_script:
+  RunTests:
     runs-on: ubuntu-latest
 
     steps:
