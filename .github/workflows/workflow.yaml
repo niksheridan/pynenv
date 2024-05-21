@@ -36,8 +36,13 @@ jobs:
         if: steps.cache-poetry-venv.outputs.cache-hit != 'true' 
         run: poetry install --no-interaction --no-root
 
-      - name: Run tests
-        run: poetry run pytest
-
       - name: Run the script
         run: poetry run python pynenv/environment.py    # Replace with your script name
+
+
+      - name: Install dependencies
+        if: steps.cache-poetry-venv.outputs.cache-hit != 'true' 
+        run: poetry add pytest
+
+      - name: Run tests
+        run: poetry run pytest
