@@ -1,10 +1,10 @@
 ---
-name: Run Python Script
+name: Test Application
 
 on:
   push:
     branches:
-      - main  # Run on pushes to the 'main' branch
+      - main
 
 jobs:
   run_script:
@@ -17,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'  # Specify your Python version
+          python-version: "3.12"
 
       - name: Install Poetry
         uses: snok/install-poetry@v1
@@ -31,18 +31,17 @@ jobs:
         with:
           path: .venv
           key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
-      
+
       - name: Install dependencies
-        if: steps.cache-poetry-venv.outputs.cache-hit != 'true' 
+        if: steps.cache-poetry-venv.outputs.cache-hit != 'true'
         run: poetry install --no-interaction --no-root
 
       - name: Run the script
-        run: poetry run python pynenv/environment.py    # Replace with your script name
-
+        run: poetry run python pynenv/environment.py 
 
       - name: Install dependencies
-        if: steps.cache-poetry-venv.outputs.cache-hit != 'true' 
-        run: poetry add pytest
+        if: steps.cache-poetry-venv.outputs.cache-hit != 'true'
+        run: poetry add pytest python-dotenv
 
       - name: Run tests
         run: poetry run pytest
