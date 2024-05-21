@@ -12,6 +12,3 @@ def get_environment_variable(env_var):
     assert environment_variable != '', f'environment variable {env_var} empty'
     return environment_variable
 
-
-if __name__ == "__main__":
-    get_environment_variable('HOME')
