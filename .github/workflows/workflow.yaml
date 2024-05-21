@@ -17,7 +17,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12.2 '  # Choose your Python version
+          python-version: '3.12.2'
+
+      - name: Install Poetry
+        run: pipx install poetry
+
 
       - name: Run the script
         run: poetry run python pynenv/environment.py    # Replace with your script name
