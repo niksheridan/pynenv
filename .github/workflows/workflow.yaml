@@ -19,8 +19,5 @@ jobs:
         with:
           python-version: '3.12.2 '  # Choose your Python version
 
-      - name: Install dependencies (if needed)
-        run: pip install -r requirements.txt  # If you have a requirements.txt file
-
       - name: Run the script
         run: poetry run python pynenv/environment.py    # Replace with your script name
