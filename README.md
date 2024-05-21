@@ -19,5 +19,5 @@ my_env_var = get_environment_variable('SOME_VAR')
 ## Build
 
 * Adjust version in ```pyproject.toml```
-* Run ```poerty build```
+* Run ```poetry build```
 * Run ```poetry publish```
