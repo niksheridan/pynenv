@@ -11,9 +11,10 @@ pip install pynenv
 ## Example Useage
 
 ```python
-from pynenv.environment import get_environment_variable
+from pynenv.environment import get_environment_variable, json2file, yaml2file
 
 my_env_var = get_environment_variable('SOME_VAR')
+json_dict = json
 ```
 
 ## Build
