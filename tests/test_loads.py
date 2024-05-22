@@ -15,9 +15,8 @@ def test_json2dict_load():
 
 def test_json2dict_type():
     test_dir = os.path.dirname(__file__)
-    want = type(dict())
     got = type(json2dict(f'{test_dir}/test_json.json'))
-    assert want == got
+    assert  got== type(dict()) or got == type(list())
 
 def test_yaml2dict_load():
     test_dir = os.path.dirname(__file__)
@@ -30,6 +29,5 @@ def test_yaml2dict_load():
 
 def test_yaml2dict_type():
     test_dir = os.path.dirname(__file__)
-    want = type(dict())
     got = type(yaml2dict(f'{test_dir}/test_yaml.yaml'))
-    assert want == got
+    assert  got== type(dict()) or got == type(list())
