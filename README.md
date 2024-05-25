@@ -1,6 +1,6 @@
 # Pynenv
 
-Richer featured environment variable grabber.
+A collection of common helper functions for your environment.
 
 ## Install
 
